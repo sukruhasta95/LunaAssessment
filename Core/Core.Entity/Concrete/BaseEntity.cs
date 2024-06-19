@@ -9,7 +9,7 @@ namespace Core.Entity.Concrete
 {
     public class BaseEntity
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public DateTime CreatedOn { get; set; } = DateTime.Now;
         public bool IsDeleted { get; set; }
     }

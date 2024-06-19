@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{41228FB2-0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Entity", "Core\Core.Entity\Core.Entity.csproj", "{B671BC98-0F18-49AB-A8B0-1334697CB4E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Infrastructure", "Core\Core.Infrastructure\Core.Infrastructure.csproj", "{FC45A687-F792-49EB-8EFB-F597C2B8D41E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Infrastructure", "Core\Core.Infrastructure\Core.Infrastructure.csproj", "{FC45A687-F792-49EB-8EFB-F597C2B8D41E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Application", "Core\Core.Application\Core.Application.csproj", "{68A2E6F4-F1EA-40A3-A21F-BFF715606931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application", "Core\Core.Application\Core.Application.csproj", "{68A2E6F4-F1EA-40A3-A21F-BFF715606931}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{09B3EAFA-AAF8-4D49-BD92-5FBD569E5549}"
 EndProject
@@ -17,21 +17,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportMicroservice", "Repor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MeterMicroservice", "MeterMicroservice", "{F9D111CD-C197-465A-B7C1-F78D35A6E741}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterMicroservice.API", "Microservices\MeterMicroservice\MeterMicroservice.API\MeterMicroservice.API.csproj", "{0D9D2368-7EE0-472E-88F1-7C6DA60066F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeterMicroservice.API", "Microservices\MeterMicroservice\MeterMicroservice.API\MeterMicroservice.API.csproj", "{0D9D2368-7EE0-472E-88F1-7C6DA60066F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterMicroservice.Entity", "Microservices\MeterMicroservice\MeterMicroservice.Entity\MeterMicroservice.Entity.csproj", "{ADBEF27C-C154-40B9-B255-FA69D5508139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeterMicroservice.Entity", "Microservices\MeterMicroservice\MeterMicroservice.Entity\MeterMicroservice.Entity.csproj", "{ADBEF27C-C154-40B9-B255-FA69D5508139}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterMicroservice.Infrastructure", "Microservices\MeterMicroservice\MeterMicroservice.Infrastructure\MeterMicroservice.Infrastructure.csproj", "{F091A517-7396-4EA6-B8F0-DE7E14D91CD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeterMicroservice.Infrastructure", "Microservices\MeterMicroservice\MeterMicroservice.Infrastructure\MeterMicroservice.Infrastructure.csproj", "{F091A517-7396-4EA6-B8F0-DE7E14D91CD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterMicroservice.Application", "Microservices\MeterMicroservice\MeterMicroservice.Application\MeterMicroservice.Application.csproj", "{079E8D26-7C65-461F-B259-4E75FB214BEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeterMicroservice.Application", "Microservices\MeterMicroservice\MeterMicroservice.Application\MeterMicroservice.Application.csproj", "{079E8D26-7C65-461F-B259-4E75FB214BEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportMicroservice.API", "Microservices\ReportMicroservice\ReportMicroservice.API\ReportMicroservice.API.csproj", "{9F4CC755-A9C0-4823-8BFD-7C7AFD352C42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportMicroservice.API", "Microservices\ReportMicroservice\ReportMicroservice.API\ReportMicroservice.API.csproj", "{9F4CC755-A9C0-4823-8BFD-7C7AFD352C42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportMicroservice.Entity", "Microservices\ReportMicroservice\ReportMicroservice.Entity\ReportMicroservice.Entity.csproj", "{2E524841-F8B0-4C7C-9C15-6FD52E9E8179}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportMicroservice.Entity", "Microservices\ReportMicroservice\ReportMicroservice.Entity\ReportMicroservice.Entity.csproj", "{2E524841-F8B0-4C7C-9C15-6FD52E9E8179}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportMicroservice.Application", "Microservices\ReportMicroservice\ReportMicroservice.Application\ReportMicroservice.Application.csproj", "{58C584CD-0601-4735-9F97-59E156668661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportMicroservice.Application", "Microservices\ReportMicroservice\ReportMicroservice.Application\ReportMicroservice.Application.csproj", "{58C584CD-0601-4735-9F97-59E156668661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportMicroservice.Infrastructure", "Microservices\ReportMicroservice\ReportMicroservice.Infrastructure\ReportMicroservice.Infrastructure.csproj", "{8B7AE3CE-9126-495E-9E31-F788B6567F3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportMicroservice.Infrastructure", "Microservices\ReportMicroservice\ReportMicroservice.Infrastructure\ReportMicroservice.Infrastructure.csproj", "{8B7AE3CE-9126-495E-9E31-F788B6567F3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2166F994-1E2D-48B8-828F-CDB3C69D9F5B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
