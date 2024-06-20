@@ -12,7 +12,17 @@ namespace MeterMicroservice.Infrastructure.Concrete.EntityFramework.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-7TA65AJ; database=LunaMeterDB;Integrated Security=True;TrustServerCertificate=true;");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("server=DESKTOP-7TA65AJ; database=LunaMeterDB;Integrated Security=True;TrustServerCertificate=true;");
+            }
+        }
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+        {
+        }
+        public AppDbContext()
+        {
         }
 
         public DbSet<Meter> Meters { get; set; }

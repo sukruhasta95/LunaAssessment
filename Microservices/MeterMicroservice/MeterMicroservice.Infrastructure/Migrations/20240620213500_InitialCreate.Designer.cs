@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MeterMicroservice.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240619173019_InitialCreate")]
+    [Migration("20240620213500_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -27,9 +27,8 @@ namespace MeterMicroservice.Infrastructure.Migrations
 
             modelBuilder.Entity("MeterMicroservice.Entity.Meter", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -60,12 +59,12 @@ namespace MeterMicroservice.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3e44d10d-6ad0-4081-9db2-ed9226715552"),
-                            CreatedOn = new DateTime(2024, 6, 19, 20, 30, 19, 504, DateTimeKind.Local).AddTicks(8423),
+                            Id = "da119dc7-9083-4b53-95c8-0f1ab2ea9f16",
+                            CreatedOn = new DateTime(2024, 6, 21, 0, 35, 0, 288, DateTimeKind.Local).AddTicks(4815),
                             CurrentValue = 10.0,
                             IsDeleted = false,
                             LastIndex = 2,
-                            MeasurementTime = new DateTime(2024, 6, 19, 20, 30, 19, 504, DateTimeKind.Local).AddTicks(8439),
+                            MeasurementTime = new DateTime(2024, 6, 21, 0, 35, 0, 288, DateTimeKind.Local).AddTicks(4829),
                             MeterSerialNo = "aaAa11aa",
                             VoltageValue = 10.0
                         });
