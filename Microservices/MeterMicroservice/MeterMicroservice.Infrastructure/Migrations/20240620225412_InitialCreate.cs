@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ReportMicroservice.Infrastructure.Migrations
+namespace MeterMicroservice.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -12,32 +12,34 @@ namespace ReportMicroservice.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "LunaReports",
+                name: "Meters",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    RequestedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
                     MeterSerialNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MeasurementTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastIndex = table.Column<int>(type: "int", nullable: false),
+                    VoltageValue = table.Column<double>(type: "float", nullable: false),
+                    CurrentValue = table.Column<double>(type: "float", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LunaReports", x => x.Id);
+                    table.PrimaryKey("PK_Meters", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
-                table: "LunaReports",
-                columns: new[] { "Id", "CreatedOn", "IsDeleted", "MeterSerialNo", "RequestedDate", "Status" },
-                values: new object[] { "45d8f116-4517-4cf5-980c-bb18518e6921", new DateTime(2024, 6, 21, 0, 35, 57, 328, DateTimeKind.Local).AddTicks(8102), false, "aaAa11aa", new DateTime(2024, 6, 21, 0, 35, 57, 328, DateTimeKind.Local).AddTicks(8113), 1 });
+                table: "Meters",
+                columns: new[] { "Id", "CreatedOn", "CurrentValue", "IsDeleted", "LastIndex", "MeasurementTime", "MeterSerialNo", "VoltageValue" },
+                values: new object[] { "49691b96-9227-4461-83b2-b21ffbd1c76d", new DateTime(2024, 6, 21, 1, 54, 11, 688, DateTimeKind.Local).AddTicks(7603), 10.0, false, 2, new DateTime(2024, 6, 21, 1, 54, 11, 688, DateTimeKind.Local).AddTicks(7618), "aaAa11aa", 10.0 });
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "LunaReports");
+                name: "Meters");
         }
     }
 }

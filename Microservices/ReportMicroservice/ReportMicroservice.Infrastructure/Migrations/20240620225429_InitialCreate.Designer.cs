@@ -12,7 +12,7 @@ using ReportMicroservice.Infrastructure.Concrete.EntityFramework.Context;
 namespace ReportMicroservice.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240620213557_InitialCreate")]
+    [Migration("20240620225429_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -53,11 +53,11 @@ namespace ReportMicroservice.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "45d8f116-4517-4cf5-980c-bb18518e6921",
-                            CreatedOn = new DateTime(2024, 6, 21, 0, 35, 57, 328, DateTimeKind.Local).AddTicks(8102),
+                            Id = "2bf0e223-c217-4980-b839-b8af458709f9",
+                            CreatedOn = new DateTime(2024, 6, 21, 1, 54, 28, 672, DateTimeKind.Local).AddTicks(6843),
                             IsDeleted = false,
                             MeterSerialNo = "aaAa11aa",
-                            RequestedDate = new DateTime(2024, 6, 21, 0, 35, 57, 328, DateTimeKind.Local).AddTicks(8113),
+                            RequestedDate = new DateTime(2024, 6, 21, 1, 54, 28, 672, DateTimeKind.Local).AddTicks(6854),
                             Status = 1
                         });
                 });
