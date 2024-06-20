@@ -15,7 +15,7 @@ namespace ReportMicroservice.Infrastructure.Migrations
                 name: "LunaReports",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     RequestedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     MeterSerialNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -30,7 +30,7 @@ namespace ReportMicroservice.Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "LunaReports",
                 columns: new[] { "Id", "CreatedOn", "IsDeleted", "MeterSerialNo", "RequestedDate", "Status" },
-                values: new object[] { new Guid("b896c024-e0d6-49dc-a1f4-dd3e34d58a34"), new DateTime(2024, 6, 19, 20, 29, 26, 132, DateTimeKind.Local).AddTicks(6719), false, "aaAa11aa", new DateTime(2024, 6, 19, 20, 29, 26, 132, DateTimeKind.Local).AddTicks(6731), 1 });
+                values: new object[] { "45d8f116-4517-4cf5-980c-bb18518e6921", new DateTime(2024, 6, 21, 0, 35, 57, 328, DateTimeKind.Local).AddTicks(8102), false, "aaAa11aa", new DateTime(2024, 6, 21, 0, 35, 57, 328, DateTimeKind.Local).AddTicks(8113), 1 });
         }
 
         /// <inheritdoc />

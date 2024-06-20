@@ -11,10 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\MeterMicroservice\MeterMicroservice.Application\MeterMicroservice.Application.csproj" />
+    <ProjectReference Include="..\ReportMicroservice.Application\ReportMicroservice.Application.csproj" />
     <ProjectReference Include="..\ReportMicroservice.Infrastructure\ReportMicroservice.Infrastructure.csproj" />
   </ItemGroup>
 

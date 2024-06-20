@@ -15,7 +15,7 @@ namespace MeterMicroservice.Infrastructure.Migrations
                 name: "Meters",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     MeterSerialNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MeasurementTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastIndex = table.Column<int>(type: "int", nullable: false),
@@ -32,7 +32,7 @@ namespace MeterMicroservice.Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Meters",
                 columns: new[] { "Id", "CreatedOn", "CurrentValue", "IsDeleted", "LastIndex", "MeasurementTime", "MeterSerialNo", "VoltageValue" },
-                values: new object[] { new Guid("3e44d10d-6ad0-4081-9db2-ed9226715552"), new DateTime(2024, 6, 19, 20, 30, 19, 504, DateTimeKind.Local).AddTicks(8423), 10.0, false, 2, new DateTime(2024, 6, 19, 20, 30, 19, 504, DateTimeKind.Local).AddTicks(8439), "aaAa11aa", 10.0 });
+                values: new object[] { "da119dc7-9083-4b53-95c8-0f1ab2ea9f16", new DateTime(2024, 6, 21, 0, 35, 0, 288, DateTimeKind.Local).AddTicks(4815), 10.0, false, 2, new DateTime(2024, 6, 21, 0, 35, 0, 288, DateTimeKind.Local).AddTicks(4829), "aaAa11aa", 10.0 });
         }
 
         /// <inheritdoc />

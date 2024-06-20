@@ -1,3 +1,7 @@
+using MeterMicroservice.Application.Abstract;
+using MeterMicroservice.Application.Concrete;
+using MeterMicroservice.Infrastructure.Abstract;
+using MeterMicroservice.Infrastructure.Concrete.EntityFramework;
 using MeterMicroservice.Infrastructure.Concrete.EntityFramework.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +17,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
+//Manager Dependency
+builder.Services.AddSingleton(typeof(IMeterService),typeof(MeterManager));
+
+//DAL Repo Dependecy
+builder.Services.AddSingleton(typeof(IMeterDal),typeof(EfMeterDal));
 
 var app = builder.Build();
 

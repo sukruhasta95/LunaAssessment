@@ -5,7 +5,7 @@ using MeterMicroservice.Infrastructure.Concrete.EntityFramework.Context;
 
 namespace MeterMicroservice.Infrastructure.Concrete.EntityFramework
 {
-    public class EfMeterDal:EfEntityReporstoryBase<Meter,AppDbContext>,IMeterDal
+    public class EfMeterDal : EfEntityReporstoryBase<Meter, AppDbContext>, IMeterDal
     {
     }
 }

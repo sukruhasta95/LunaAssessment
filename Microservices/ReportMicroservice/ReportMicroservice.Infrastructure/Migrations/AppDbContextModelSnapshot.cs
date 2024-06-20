@@ -24,9 +24,8 @@ namespace ReportMicroservice.Infrastructure.Migrations
 
             modelBuilder.Entity("ReportMicroservice.Entity.Report", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -51,11 +50,11 @@ namespace ReportMicroservice.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b896c024-e0d6-49dc-a1f4-dd3e34d58a34"),
-                            CreatedOn = new DateTime(2024, 6, 19, 20, 29, 26, 132, DateTimeKind.Local).AddTicks(6719),
+                            Id = "45d8f116-4517-4cf5-980c-bb18518e6921",
+                            CreatedOn = new DateTime(2024, 6, 21, 0, 35, 57, 328, DateTimeKind.Local).AddTicks(8102),
                             IsDeleted = false,
                             MeterSerialNo = "aaAa11aa",
-                            RequestedDate = new DateTime(2024, 6, 19, 20, 29, 26, 132, DateTimeKind.Local).AddTicks(6731),
+                            RequestedDate = new DateTime(2024, 6, 21, 0, 35, 57, 328, DateTimeKind.Local).AddTicks(8113),
                             Status = 1
                         });
                 });
