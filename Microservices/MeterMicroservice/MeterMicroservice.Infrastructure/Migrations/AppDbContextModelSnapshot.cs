@@ -56,12 +56,12 @@ namespace MeterMicroservice.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "da119dc7-9083-4b53-95c8-0f1ab2ea9f16",
-                            CreatedOn = new DateTime(2024, 6, 21, 0, 35, 0, 288, DateTimeKind.Local).AddTicks(4815),
+                            Id = "49691b96-9227-4461-83b2-b21ffbd1c76d",
+                            CreatedOn = new DateTime(2024, 6, 21, 1, 54, 11, 688, DateTimeKind.Local).AddTicks(7603),
                             CurrentValue = 10.0,
                             IsDeleted = false,
                             LastIndex = 2,
-                            MeasurementTime = new DateTime(2024, 6, 21, 0, 35, 0, 288, DateTimeKind.Local).AddTicks(4829),
+                            MeasurementTime = new DateTime(2024, 6, 21, 1, 54, 11, 688, DateTimeKind.Local).AddTicks(7618),
                             MeterSerialNo = "aaAa11aa",
                             VoltageValue = 10.0
                         });
