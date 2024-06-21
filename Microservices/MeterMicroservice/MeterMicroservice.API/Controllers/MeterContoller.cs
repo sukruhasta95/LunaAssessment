@@ -1,11 +1,13 @@
 ﻿using MeterMicroservice.Application.Abstract;
 using MeterMicroservice.Entity;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeterMicroservice.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowSpecificOrigin")]
     public class MeterContoller : Controller
     {
         private IMeterService _meterService;

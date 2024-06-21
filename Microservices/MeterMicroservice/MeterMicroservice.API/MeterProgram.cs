@@ -3,39 +3,78 @@ using MeterMicroservice.Application.Concrete;
 using MeterMicroservice.Infrastructure.Abstract;
 using MeterMicroservice.Infrastructure.Concrete.EntityFramework;
 using MeterMicroservice.Infrastructure.Concrete.EntityFramework.Context;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
-var builder = WebApplication.CreateBuilder(args);
-
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString));
-
-//Manager Dependency
-builder.Services.AddSingleton(typeof(IMeterService),typeof(MeterManager));
-
-//DAL Repo Dependecy
-builder.Services.AddSingleton(typeof(IMeterDal),typeof(EfMeterDal));
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+public class Program
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    public static void Main(string[] args)
+    {
+        CreateHostBuilder(args).Build().Run();
+    }
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder
+                    .ConfigureAppConfiguration((hostingContext, config) =>
+                    {
+                        // Configuration settings can be added here if needed
+                    })
+                    .ConfigureServices((hostContext, services) =>
+                    {
+                        var connectionString = hostContext.Configuration.GetConnectionString("DefaultConnection");
+
+                        services.AddControllers();
+                        services.AddEndpointsApiExplorer();
+                        services.AddSwaggerGen();
+                        services.AddDbContext<AppDbContext>(options =>
+                            options.UseSqlServer(connectionString));
+
+                        // CORS policy
+                        services.AddCors(options =>
+                        {
+                            options.AddPolicy("AllowSpecificOrigin",
+                                builder =>
+                                {
+                                    builder.AllowAnyOrigin()
+                                           .AllowAnyHeader()
+                                           .AllowAnyMethod();
+                                });
+                        });
+
+                        // Manager Dependency
+                        services.AddScoped<IMeterService, MeterManager>();
+
+                        // DAL Repo Dependency
+                        services.AddScoped<IMeterDal, EfMeterDal>();
+                    })
+                    .Configure(app =>
+                    {
+                        var env = app.ApplicationServices.GetRequiredService<IWebHostEnvironment>();
+
+                        if (env.IsDevelopment())
+                        {
+                            app.UseDeveloperExceptionPage();
+                            app.UseSwagger();
+                            app.UseSwaggerUI();
+                        }
+
+                        app.UseHttpsRedirection();
+
+                        app.UseRouting();
+
+                        // CORS politikasýný ekleyin
+                        app.UseCors("AllowSpecificOrigin");
+
+                        app.UseAuthorization();
+
+                        app.UseEndpoints(endpoints =>
+                        {
+                            endpoints.MapControllers();
+                        });
+                    });
+            });
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
