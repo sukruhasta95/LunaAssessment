@@ -14,12 +14,21 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
 //Manager Dependency
-builder.Services.AddSingleton(typeof(IReportService), typeof(ReportManager));
+builder.Services.AddScoped(typeof(IReportService), typeof(ReportManager));
 
 //DAL Repo Dependecy
-builder.Services.AddSingleton(typeof(IReportDal), typeof(EfReportDal));
+builder.Services.AddScoped(typeof(IReportDal), typeof(EfReportDal));
 
 var app = builder.Build();
 
@@ -29,6 +38,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 

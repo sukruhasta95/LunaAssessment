@@ -1,4 +1,5 @@
 ﻿using MeterMicroservice.Application.Abstract;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using ReportMicroservice.Application.Abstract;
 using ReportMicroservice.Entity;
@@ -7,6 +8,7 @@ namespace ReportMicroservice.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowSpecificOrigin")]
     public class ReportController : Controller
     {
         private IReportService _reportService;
