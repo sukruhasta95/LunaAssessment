@@ -14,5 +14,6 @@ namespace ReportMicroservice.Entity
         public DateTime RequestedDate { get; set; }
         public EReportStatus Status { get; set; }
         public string MeterSerialNo { get; set; }
+        public string? ReportPath { get; set; }
     }
 }

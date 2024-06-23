@@ -37,11 +37,16 @@ namespace ReportMicroservice.Application.Concrete
 
         public IDataResult<List<Report>> GetAll()
         {
-            var reportList = _reportDal.GetList(x => !x.IsDeleted).ToList();
+            var reportList = _reportDal.GetList(x => !x.IsDeleted).OrderByDescending(x => x.CreatedOn).ToList();
             return new SuccessDataResult<List<Report>>(reportList);
         }
 
-        public Report GetById(string id) => _reportDal.Get(x => x.Id == id);
+        public Report GetById(string id)
+        {
+            var report = _reportDal.Get(x => x.Id == id);
+
+            return report;
+        }
 
 
         public void Update(Report report)

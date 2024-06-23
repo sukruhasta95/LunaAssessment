@@ -8,6 +8,6 @@ namespace ReportMicroservice.Application.Constants
 {
     public static class ReportMessages
     {
-        public static string ReportAdded = "Report has been added.";
+        public static string ReportAdded = "Report preparing.";
     }
 }

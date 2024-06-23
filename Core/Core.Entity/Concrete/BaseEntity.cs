@@ -9,8 +9,14 @@ namespace Core.Entity.Concrete
 {
     public class BaseEntity
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
-        public DateTime CreatedOn { get; set; } = DateTime.Now;
-        public bool IsDeleted { get; set; } = false;
+        public BaseEntity()
+        {
+            Id = Guid.NewGuid().ToString();
+            CreatedOn = DateTime.Now;
+            IsDeleted = false;
+        }
+        public string Id { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

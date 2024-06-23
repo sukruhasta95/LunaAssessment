@@ -8,11 +8,11 @@ namespace MeterMicroservice.API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("AllowSpecificOrigin")]
-    public class MeterContoller : Controller
+    public class MeterController : Controller
     {
         private IMeterService _meterService;
 
-        public MeterContoller(IMeterService meterService)
+        public MeterController(IMeterService meterService)
         {
             _meterService = meterService;
         }
@@ -50,6 +50,13 @@ namespace MeterMicroservice.API.Controllers
         {
             _meterService.Delete(id);
             return Ok();
+        }
+
+        [HttpGet("GetBySerialNo")]
+        public IActionResult GetBySerialNo([FromQuery]string serialNo)
+        {
+            var result = _meterService.GetBySerialNo(serialNo);
+            return Ok(result);
         }
     }
 }

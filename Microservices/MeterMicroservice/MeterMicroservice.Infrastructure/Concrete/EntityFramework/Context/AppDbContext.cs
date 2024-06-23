@@ -1,5 +1,6 @@
 ﻿using MeterMicroservice.Entity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,23 +22,11 @@ namespace MeterMicroservice.Infrastructure.Concrete.EntityFramework.Context
             : base(options)
         {
         }
-        public AppDbContext()
+        public AppDbContext() : base()
         {
         }
 
         public DbSet<Meter> Meters { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Meter>().HasData(
-                new Meter()
-                {
-                   MeterSerialNo = "aaAa11aa",
-                   MeasurementTime = DateTime.Now,
-                   LastIndex = 2,
-                   VoltageValue = 10,
-                   CurrentValue = 10,
-                }) ;
-        }
     }
 }

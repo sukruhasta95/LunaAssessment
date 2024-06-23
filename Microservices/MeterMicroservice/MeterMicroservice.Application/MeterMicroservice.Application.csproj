@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="17.10.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.4.3" />
+    <PackageReference Include="xunit" Version="2.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Core\Core.Application\Core.Application.csproj" />
     <ProjectReference Include="..\MeterMicroservice.Entity\MeterMicroservice.Entity.csproj" />
     <ProjectReference Include="..\MeterMicroservice.Infrastructure\MeterMicroservice.Infrastructure.csproj" />
