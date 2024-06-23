@@ -24,17 +24,7 @@ namespace ReportMicroservice.Infrastructure.Concrete.EntityFramework.Context
         public AppDbContext()
         {
         }
-        public DbSet<Report> LunaReports { get; set; }
+        public DbSet<Report> Reports { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Report>().HasData(
-                new Report()
-                {
-                    MeterSerialNo = "aaAa11aa",
-                    RequestedDate = DateTime.Now,
-                    Status = EReportStatus.Completed,
-                });
-        }
     }
 }

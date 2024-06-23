@@ -52,19 +52,6 @@ namespace MeterMicroservice.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Meters");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "49691b96-9227-4461-83b2-b21ffbd1c76d",
-                            CreatedOn = new DateTime(2024, 6, 21, 1, 54, 11, 688, DateTimeKind.Local).AddTicks(7603),
-                            CurrentValue = 10.0,
-                            IsDeleted = false,
-                            LastIndex = 2,
-                            MeasurementTime = new DateTime(2024, 6, 21, 1, 54, 11, 688, DateTimeKind.Local).AddTicks(7618),
-                            MeterSerialNo = "aaAa11aa",
-                            VoltageValue = 10.0
-                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -11,5 +11,6 @@ namespace MeterMicroservice.Application.Abstract
 {
     public interface IMeterService:IApplicationService<Meter>
     {
+        List<Meter> GetBySerialNo(string serialNo);
     }
 }

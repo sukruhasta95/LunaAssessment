@@ -4,16 +4,14 @@ using ReportMicroservice.Application.Concrete;
 using ReportMicroservice.Infrastructure.Abstract;
 using ReportMicroservice.Infrastructure.Concrete.EntityFramework;
 using ReportMicroservice.Infrastructure.Concrete.EntityFramework.Context;
+using Wolverine;
+using Wolverine.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-// Add services to the container.
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(connectionString));
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
@@ -24,6 +22,11 @@ builder.Services.AddCors(options =>
                    .AllowAnyMethod();
         });
 });
+builder.Host.UseWolverine(x =>
+{
+    x.UseRabbitMq(new Uri("amqps://jswqdvpj:5Vvc0aJcgSQN3nQjazWocLPwxpZIDyNq@rat.rmq2.cloudamqp.com/jswqdvpj"));
+});
+
 //Manager Dependency
 builder.Services.AddScoped(typeof(IReportService), typeof(ReportManager));
 
@@ -40,6 +43,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowSpecificOrigin");
+
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

@@ -19,10 +19,6 @@ public class Program
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder
-                    .ConfigureAppConfiguration((hostingContext, config) =>
-                    {
-                        // Configuration settings can be added here if needed
-                    })
                     .ConfigureServices((hostContext, services) =>
                     {
                         var connectionString = hostContext.Configuration.GetConnectionString("DefaultConnection");
@@ -66,7 +62,6 @@ public class Program
 
                         app.UseRouting();
 
-                        // CORS politikasýný ekleyin
                         app.UseCors("AllowSpecificOrigin");
 
                         app.UseAuthorization();

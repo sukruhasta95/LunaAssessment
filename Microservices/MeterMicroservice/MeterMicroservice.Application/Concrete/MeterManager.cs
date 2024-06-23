@@ -36,11 +36,19 @@ namespace MeterMicroservice.Application.Concrete
 
         public IDataResult<List<Meter>> GetAll()
         {
-            var meterList = _meterDal.GetList(x => !x.IsDeleted).ToList();
+            var meterList = _meterDal.GetList(x => !x.IsDeleted).OrderByDescending(x=>x.CreatedOn).ToList();
             return new SuccessDataResult<List<Meter>>(meterList);
         }
 
         public Meter GetById(string id) => _meterDal.Get(x => x.Id == id);
+
+        public List<Meter> GetBySerialNo(string serialNo)
+        {
+           var meterList = _meterDal.GetList(x=>x.MeterSerialNo == serialNo)
+                .OrderByDescending(x=>x.MeasurementTime)
+                .ToList();
+            return meterList;
+        }
 
         public void Update(Meter meter)
         {

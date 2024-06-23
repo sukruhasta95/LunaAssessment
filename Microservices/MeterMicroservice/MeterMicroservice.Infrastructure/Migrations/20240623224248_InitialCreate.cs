@@ -28,11 +28,6 @@ namespace MeterMicroservice.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Meters", x => x.Id);
                 });
-
-            migrationBuilder.InsertData(
-                table: "Meters",
-                columns: new[] { "Id", "CreatedOn", "CurrentValue", "IsDeleted", "LastIndex", "MeasurementTime", "MeterSerialNo", "VoltageValue" },
-                values: new object[] { "49691b96-9227-4461-83b2-b21ffbd1c76d", new DateTime(2024, 6, 21, 1, 54, 11, 688, DateTimeKind.Local).AddTicks(7603), 10.0, false, 2, new DateTime(2024, 6, 21, 1, 54, 11, 688, DateTimeKind.Local).AddTicks(7618), "aaAa11aa", 10.0 });
         }
 
         /// <inheritdoc />
