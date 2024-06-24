@@ -9,7 +9,7 @@ Sınıfındaki connection stringi düzenlemelisiniz.
 Daha sonra database tabloları oluşturmak için migration yapısını kullanmalısınız.
 Proje içinde initial-migration olduğu için migration update yapmmanız yeterli olacaktır.
 **dotnet ef database update**  komutunu kullanabilirsiniz.
-Bu komutu terminalde **..LunaAssessment\Microservices\MeterMicroservice\MeterMicroservice.Infrastructure>** ve **LunaAssessment\Microservices\MeterMicroservice\ReportMicroservice.Infrastructure> **
+Bu komutu terminalde **..LunaAssessment\Microservices\MeterMicroservice\MeterMicroservice.Infrastructure>** ve **LunaAssessment\Microservices\MeterMicroservice\ReportMicroservice.Infrastructure>**
 pathlerinde çalıştırarak migration update yapabilirsiniz.
 
 Proje multiple startup olarak ayarlanmıştır. Eğer bilgisayarınızda bu şekilde konfigüre edilmiş olarak açılmaz ise property page sayfasından 
